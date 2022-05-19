@@ -1,41 +1,35 @@
 const h1 = document.querySelector("div.hello h1");
 
 function handleTitleClick () {
-  h1.style.color = "blue";
-}
-function handleMouseEnter () {
-  h1.innerText = "Mouse is here!";
-}
-function handleMouseLeave () {
-  h1.innerText = "Mouse is gone!";
+  // const clickedClass = "clicked";
+  h1.classList.toggle("clicked");
+
+  // if (h1.classList.contains(clickedClass)) {
+  //   h1.classList.remove(clickedClass);
+  // } else {
+  //   h1.classList.add(clickedClass);
+  // }
+
 }
 
-function handleWindowResize () {
-  document.body.style.backgroundColor = "tomato";
-}
-function handleWindowCopy () {
-  alert("copier!");
+h1.addEventListener("click", handleTitleClick);
+
+/*
+const h1 = document.querySelector("div.hello h1");
+
+function handleTitleClick () {
+  const clickedClass = "clicked";
+  if (h1.classList.contains(clickedClass)) {
+    h1.classList.remove(clickedClass);
+  } else {
+    h1.classList.add(clickedClass);
+  }
+  // className 은 getter이면서 setter 이다 ! 기존 class 다 지워버림
+  // classList.contains(); 사용으로 기존에 있던 class를 지우지 않고 클래스 추가 가능
+  // classList.remove();
+  // classList.add(); 
+  // -> css 수정이 있더라도 const 변수 값만 바꿔주면 되고 내용은 안 바꿔줘도 됨
 }
 
-function handleWindowOffline () {
-  alert("SOS no WIFI");
-}
-function handleWindowOnline () {
-  alert("WIFI is good~~");
-}
-
-
-h1.onclick = handleTitleClick;
-h1.onmouseenter = handleMouseEnter;
-h1.onmouseleave = handleMouseLeave;
-// h1.addEventListener("click", handleTitleClick);
-// h1.addEventListener("mouseenter", handleMouseEnter);
-// h1.addEventListener("mouseleave", handleMouseLeave);
-// → 이 방법도 있지만 addEventListener 선호
-// → removeEventListener 사용할 수 있기 때문
-
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
-window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("online", handleWindowOnline);
+h1.addEventListener("click", handleTitleClick);
+*/
